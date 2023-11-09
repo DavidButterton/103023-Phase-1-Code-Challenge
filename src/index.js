@@ -73,10 +73,9 @@ function renderfilmShowing(film) {
         e.preventDefault
         if (availableTickets > 0) {
             availableTickets --;
-            availableTickets.textContent = remainingTickets
-            e.target.remainingTickets.value
+            availableTickets.textContent = remainingTickets;
         } else {
-            alert('sold out')
+            window.alert('sold out')
         }
     }
 }
