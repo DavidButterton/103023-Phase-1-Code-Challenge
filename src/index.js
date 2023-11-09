@@ -11,11 +11,11 @@ const filmDescription = document.getElementById('film-info')
 //grab the showtime element and assign a variable
 const showtime = document.getElementById('showtime');
 //grab the ticket number element and assign a variable
-const remainingTickets = document.getElementById('ticket-num')
+const remainingTickets = document.getElementById('ticketnum')
 //grab the films element and asssign a varaible
 const filmList = document.getElementById('films')
 //grab the buy ticket element and assign it to a varaible
-const buyTicket = document.getElementById('buy-tickets')
+const buyTicket = document.getElementById('buy-ticket')
 
 
 //write a fetch function to grab all of the API's
@@ -63,7 +63,7 @@ function renderfilmShowing(film) {
     //add textcontent from API to the fuction parameter for showtime
     showtime.textContent = film.showtime
     //write a function to subtract film capacity from tickets sold
-    const availableTickets = film.capacity - film.tickets_sold;
+    let availableTickets = film.capacity - film.tickets_sold;
     //Add text content from API to parameter for tickets remaining subtracting capcity from tickets remaining
     remainingTickets.textContent = availableTickets
     //add an event listener to the variable buyTicket with click and pass a function
@@ -71,10 +71,10 @@ function renderfilmShowing(film) {
 
     function handleTicketPurchase(e) {
         e.preventDefault
-        e.target.ticket-num.value
         if (availableTickets > 0) {
             availableTickets --;
-            availableTickets.textContent = ticket-num
+            availableTickets.textContent = remainingTickets
+            e.target.remainingTickets.value
         } else {
             alert('sold out')
         }
